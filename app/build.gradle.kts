@@ -3,7 +3,7 @@ import java.util.Properties
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id("com.google.gms.google-services") version "4.4.4"
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -76,4 +76,7 @@ dependencies {
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics)
 
+
 }
+
+apply(plugin = "com.google.gms.google-services")

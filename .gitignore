@@ -1,22 +1,28 @@
+# Architecture & Build
 *.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+.gradle/
+/build/
+/captures/
+.externalNativeBuild/
+.cxx/
+
+# User-specific / Local Settings (THE VAULT)
 local.properties
-# Keystore files
+.DS_Store
+# This ignores the ENTIRE idea folder, which is safer than picking files
+.idea/ 
+
+# Keystore files (NEVER PUSH THESE)
 *.jks
 *.keystore
+*.p12
+*.google
 
-# Secure Vault & Firebase (Foolproof Wildcards)
-**/secrets.xml
+# Firebase & Secrets (The Safety Net)
 **/google-services.json
+**/secrets.xml
+**/secrets.properties
+
+# Backup files
+*.bak
+*.swp

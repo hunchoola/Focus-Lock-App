@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/tvHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Focus Lock App"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_primary"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardDistractionShare"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvHeader"
+        android:layout_marginBottom="15dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="2dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/stats_background"
+            android:padding="15dp">
+
+            <TextView
+                android:id="@+id/tvAttemptsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DISTRACTIONS BLOCKED"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.1"
+                android:textColor="@color/stats_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvAttemptsCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="0"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:textColor="@color/stats_count"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvAttemptsTitle" />
+
+            <ImageView
+                android:id="@+id/ivShareIcon"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_share"
+                app:tint="@color/stats_count"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-4473657267431851/3000384920" />
+
+    <TextView
+        android:id="@+id/tvFooter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Developed by Akanni_ola.dev © 2026"
+        android:textSize="12sp"
+        android:textColor="@color/text_secondary"
+        android:layout_above="@id/adView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@id/cardDistractionShare"
+        android:layout_above="@id/tvFooter">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Select apps to lock:"
+                android:textColor="@color/text_primary"
+                android:textSize="14sp"/>
+
+            <Button
+                android:id="@+id/btnSelectSocial"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Select Socials"
+                android:textSize="12sp"
+                android:backgroundTint="#2196F3"
+                android:textColor="#FFFFFF"/>
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/appList"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:choiceMode="multipleChoice"
+            android:background="@color/list_background"
+            android:layout_marginBottom="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="5dp">
+
+            <Button
+                android:id="@+id/btnStartTime"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Start: 09:00 AM"
+                android:layout_marginEnd="5dp"/>
+
+            <Button
+                android:id="@+id/btnEndTime"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="End: 05:00 PM"
+                android:layout_marginStart="5dp"/>
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/checkRepeat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Repeat Daily"
+            android:textColor="@color/text_primary"
+            android:paddingVertical="5dp"/>
+
+        <Button
+            android:id="@+id/btnStartBlock"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="🔒 ACTIVATE LOCK"
+            android:textSize="18sp"
+            android:backgroundTint="#D32F2F"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="10dp"/>
+
+        <Button
+            android:id="@+id/btnStopBlock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="STOP SERVICE"
+            android:backgroundTint="#757575"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="5dp"/>
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabChat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="30dp"
+        app:srcCompat="@drawable/ic_sparkles"
+        app:tint="#FFFFFF"
+        app:backgroundTint="#2196F3"
+        android:contentDescription="Chat with AI Coach"
+        app:elevation="6dp"
+        app:borderWidth="0dp" />
+
+</RelativeLayout>

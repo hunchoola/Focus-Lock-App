@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="app_background">#121212</color>
+
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#AAAAAA</color>
+
+    <color name="stats_background">#263238</color>
+    <color name="stats_title">#90CAF9</color>
+    <color name="stats_count">#BBDEFB</color>
+
+    <color name="list_background">#1E1E1E</color>
+</resources>

@@ -18,6 +18,8 @@ Focus Lock goes beyond standard screen-time limits. It physically blocks distrac
 * **Android APIs:** `UsageStatsManager`, Foreground Services, `System_Alert_Window`
 * **Concurrency:** Kotlin Coroutines & Dispatchers
 
+  This branch is for features
+
 ## 🔒 Security & Local Setup
 To protect API quotas, the sensitive keys have been removed from this public repository. If you are cloning this project to run locally, you must provide your own keys.
 
@@ -25,9 +27,11 @@ To protect API quotas, the sensitive keys have been removed from this public rep
 2. Navigate to `app/src/main/res/values/`.
 3. Create a new file named `secrets.xml`.
 4. Add your Gemini API key and Google Sheets Webhook URL:
-```xml
+```xml  
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="sheets_webhook_url">YOUR_GOOGLE_SHEETS_WEBHOOK_URL</string>
     <string name="gemini_api_key">YOUR_GEMINI_API_KEY</string>
 </resources>
+
+
